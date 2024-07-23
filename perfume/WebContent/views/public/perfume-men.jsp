@@ -235,7 +235,7 @@
 $(document).on("click", ".idpro-order", (function () {
 	var idpro = $(this).attr("idpro");
 	//lấy dữ liêu
-	swal.fire({
+	Swal.fire({
         title: 'Thêm sản phẩm vào giỏ hàng',
         text: "Dữ liệu sẽ được cập nhật!",
         icon: 'warning',

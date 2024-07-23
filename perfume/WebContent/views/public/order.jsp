@@ -63,20 +63,45 @@
 																				<%=item.getProduct().getPerfumes() %>
 																			</td>
 																			<td>
-																				<%=item.getPrice()%>
+																				<%=price=item.getProduct().getMoney()%>
 																			</td>
 																			<td>
-																				<%=item.getQuantity() %>
+																				<input type="number"
+																					class="form-control"
+																					value="<%=quanity=item.getQuantity()%>"
+																					name="quantity"
+																					onchange="updateTong(this, <%=price%>)">
 																			</td>
 																			<td>
-																				<%=tong %>
+																				<% if(quanity>= 0) { %>
+																					<%=tong= quanity * price %>
+																						<% } else { %>
+																							0
+																							<% } %>
+																								<!-- Add the following JavaScript code -->
+																								<script>
+																									var allTong = 0; // Initialize allTong outside of the updateTong function
+																									function updateTong(element, price) {
+																										var quantity = element.value;
+																										if (quantity >= 0) {
+																											var tong = quantity * price;
+																											element.parentElement.nextElementSibling.innerHTML = tong;
+																											allTong += Number(tong); // Convert allTong to a number before adding tong
+																										} else {
+																											element.value = 0;
+																											element.parentElement.nextElementSibling.innerHTML = 0;
+																										}
+																										document.getElementById("totalAmount").innerHTML = allTong;
+																									}
+																								</script>
 																			</td>
 																		</tr>
 																		<% } %>
 																			<tr>
 																				<th colspan="4" class="text-center">Tổng
 																					tiền:</th>
-																				<td class="text-center">
+																				<td class="text-center"
+																					id="totalAmount">
 																					<%=allTong %>
 																				</td>
 																			</tr>
@@ -226,7 +251,7 @@
 							$(document).on("click", ".del-order", (function () {
 								var idOrder = $(this).attr("idOrder");
 								//lấy dữ liêu
-								swal.fire({
+								Swal.fire({
 									title: 'Bạn Có Chắc Chắn?',
 									text: "Sản phẩm sẽ bị xóa khỏi giỏ hàng.!",
 									icon: 'warning',

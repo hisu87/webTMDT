@@ -99,7 +99,7 @@
 $(document).on("click", ".del-comment", (function () {
 	var idCMT = $(this).attr("idCMT");
 	//lấy dữ liêu
-	swal.fire({
+	Swal.fire({
         title: 'Bạn Có Chắc Chắn?',
         text: "Dữ Liệu Sẽ Không Thể Phục Hồi!",
         icon: 'warning',

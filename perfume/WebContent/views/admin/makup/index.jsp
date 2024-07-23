@@ -71,7 +71,7 @@
 <script>
 $(document).on("click", ".del-catperfume", (function () {
 	//lấy dữ liêu
-	swal.fire({
+	Swal.fire({
         title: 'Bạn Có Chắc Chắn?',
         text: "Dữ Liệu Sẽ Không Thể Phục Hồi!",
         icon: 'warning',

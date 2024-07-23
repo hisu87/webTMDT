@@ -107,7 +107,7 @@
 $(document).on("click", ".del-cat", (function () {
 	var id = $(this).attr("idCatUser");
 	//lấy dữ liêu
-	swal.fire({
+	Swal.fire({
         title: 'Bạn Có Chắc Chắn?',
         text: "Dữ Liệu Sẽ Không Thể Phục Hồi!",
         icon: 'warning',
@@ -128,7 +128,7 @@ $(document).on("click", ".del-cat", (function () {
     	            data: {idCatUser: id},
     	            success: function (data) {
     	            	if(data==false){
-	    	            		Swal.fire(
+	    	            		swal.fire(
    	    	                    'Thông Báo!',
    	    	                    'Bạn không thể xóa loại tài khoản này.',
    	    	                    'danger'
@@ -136,7 +136,7 @@ $(document).on("click", ".del-cat", (function () {
    	    	                    location.reload();
    	    	                })
     	            	}else{
-   	            			Swal.fire(
+   	            			swal.fire(
 	            			      'Thành công!',
 	            			      'Bạn đã xóa thành công.',
 	            			      'success'
@@ -146,7 +146,7 @@ $(document).on("click", ".del-cat", (function () {
     	            	}
     	            },
     	            error: function (xhr, ajaxOptions, thrownError) {
-    	                Swal.fire(
+    	                swal.fire(
     	                    'Thông Báo!',
     	                    'Thao tác không thể thực hiện.',
     	                    'danger'
@@ -165,4 +165,6 @@ $(document).on("click", ".del-cat", (function () {
     		})
 }))
 </script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
   <%@include file="/templates/admin/inc/footer.jsp" %>

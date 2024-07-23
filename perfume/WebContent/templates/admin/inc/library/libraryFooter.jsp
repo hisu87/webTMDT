@@ -37,7 +37,8 @@
 <!-- Toggle Boostrap 4 -->
 <script src="<%=request.getContextPath()%>/templates/admin/dist/js/bootstrap4-toggle.min.js"></script>
 <!-- sweetalert -->
-<script src="<%=request.getContextPath() %>/templates/admin/dist/node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 
 

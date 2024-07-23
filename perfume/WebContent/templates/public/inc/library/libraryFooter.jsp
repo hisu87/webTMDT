@@ -15,6 +15,7 @@
 <script type="text/javascript" src="<%=request.getContextPath() %>/templates/public/js/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
 <!-- sweetalert -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 
  <script type="text/javascript">
